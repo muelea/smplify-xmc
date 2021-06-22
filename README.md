@@ -1,4 +1,4 @@
-# Smplify-XMC
+# SMPLify-XMC
 This repo is part of our project: On Self-Contact and Human Pose. \
 [[Project Page](https://tuch.is.tue.mpg.de)] [[Paper](https://arxiv.org/pdf/2104.03176.pdf)] [[MPI Project Page](https://www.is.mpg.de/publications/mueller-cvpr-2021)]
 
