@@ -1,0 +1,19 @@
+data/dbs
+data/essentials
+data/example_output
+condor/
+data/example_input/singleview/subject2
+
+# Python cache
+__pycache__/
+*.py[cod]
+*$py.class
+
+# OS generated files #
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db

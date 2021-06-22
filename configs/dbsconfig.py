@@ -1,0 +1,6 @@
+MODEL_TYPE = 'smplx'
+GEODESICS_PATH = f'data/metadata/geodesics/{MODEL_TYPE}/{MODEL_TYPE.upper()}_NEUTRAL_geodesic_dist.npy'
+HD_OPERATOR_PATH = f'data/metadata/hd_model/{MODEL_TYPE}/HD_{MODEL_TYPE.upper()}_NEUTRAL_vert_regressor_sparse.npz'
+PVCOR_PATH = f'data/metadata/hd_model/{MODEL_TYPE}/HD_{MODEL_TYPE.upper()}_NEUTRAL_sample_from_mesh_out.pkl'
+SEGMENT_PATH = f'data/metadata/segments'
+ESSENTIALS_DIR = f'data/metadata'

@@ -1,0 +1,88 @@
+# Flags for data set and data dirs
+dataset: 'mtp'
+output_dir: ''
+input_base_dir: ''
+input_dir_poses: ''
+input_dir_images: 'images'
+input_dir_keypoints: 'keypoints'
+model_folder: ''
+use_calibration: False
+use_presented_hand_pose: False
+kpts_sel_strategy: 'fixed'
+go_sel_strategy: 'frontal'
+# Flags for SMPL/SMPL-H/SMPL-X model
+num_shape_comps: 10
+use_pca: True
+num_pca_comps: 12
+use_hands: True
+use_face: True
+flat_hand_mean: False
+use_contact: True
+use_joints_conf: True
+focal_length: 2170
+joints_to_ign:
+    - 1
+# The number of mixture components for the pose prior
+num_gaussians: 8
+left_hand_prior_type: l2
+right_hand_prior_type: l2
+jaw_prior_type: l2
+# LBFGS with line search
+optim_type: 'lbfgsls'
+ftol: 1e-9
+gtol: 1e-9
+lr: 1.0
+maxiters: 30
+# Relative change in loss value
+data_weights:
+    - 1.0
+    - 1.0
+    - 1.0
+body_pose_prior_weights:
+    - 0.0
+    - 15000.0
+    - 10000.0
+mimicked_contact_weights:
+    - 0.0
+    - 250000.0
+    - 125000.0
+scopti_weights:
+    - 0.0
+    - 0.0
+    - 1000.0
+shape_weights:
+    - 100.0
+    - 10.0
+    - 10.0
+expr_weights:
+    - 0.0
+    - 0.0
+    - 0.0
+hand_pose_prior_weights:
+    - 0.0
+    - 10.0
+    - 5.0
+jaw_pose_prior_weights:
+    - 0.0,0.0,0.0
+    - 0.0,0.0,0.0
+    - 0.0,0.0,0.0
+hand_joints_weights:
+    - 0.5
+    - 2.0
+    - 1.0
+face_joints_weights:
+    - 0.5
+    - 1.0
+    - 1.0
+camera_rot_weights:
+    - 10000
+    - 10
+    - 10
+body_global_orient_weights:
+    - 10
+    - 10
+    - 10
+focal_length_weights:
+    - 1.0
+    - 1.0
+    - 1.0
