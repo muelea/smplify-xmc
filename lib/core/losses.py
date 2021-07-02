@@ -268,10 +268,11 @@ class SMPLifyXMCLoss(nn.Module):
 
             if gt_height is not None or gt_weight is not None:
                 # get fitted height and mass from betas
-                shape_components = torch.cat([body_model_output.betas,
-                                       body_model_output.expression], dim=-1)
+                # shape_components = torch.cat([body_model_output.betas,
+                #                        body_model_output.expression], dim=-1)
+                betas = body_model_output.betas if body_model_output.betas is not None else self.body_model.betas
                 v_shaped = self.body_model.v_template + \
-                       lbs.blend_shapes(shape_components,
+                       lbs.blend_shapes(betas,
                                         self.body_model.shapedirs)
                 fitted_measurements = self.measurements_crit(v_shaped)
                 f_height = fitted_measurements['height']

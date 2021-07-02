@@ -8,7 +8,7 @@ proglog==0.1.9
 pyrender==0.1.33
 PyYAML==5.4
 scipy==1.4.1
-smplx==0.1.13
+smplx==0.1.28
 torch==1.8.1
 torchgeometry==0.1.2
 tqdm==4.42.0
