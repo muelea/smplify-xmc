@@ -41,6 +41,7 @@ from lib.utils.loadpriors import load_all_priors
 from configs.dbsconfig import *
 
 torch.backends.cudnn.enabled = False
+os.environ['PYOPENGL_PLATFORM'] = 'egl'
 
 def main(**args):
 
