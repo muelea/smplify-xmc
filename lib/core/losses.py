@@ -279,7 +279,7 @@ class SMPLifyXMCLoss(nn.Module):
                 f_mass = fitted_measurements['mass']
                 # shape loss
                 measurements_loss = torch.exp(100*(abs(f_height-gt_height))) + \
-                            torch.exp(abs(f_mass-gt_weight))
+                            torch.exp(abs(f_mass-gt_weight)/5)
                 shape_loss = (shape_prior_loss + measurements_loss) * self.shape_weight
             else:
                 shape_loss = shape_prior_loss * self.shape_weight
