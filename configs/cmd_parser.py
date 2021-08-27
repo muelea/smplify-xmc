@@ -240,6 +240,10 @@ def parse_config(argv=None):
                         default=False,
                         type=lambda x: x.lower() in ['true', '1'],
                         help='Whether to use the left and right hand poses from the presetend pose')
+    parser.add_argument('--weight_above_150',
+                        default=False,
+                        type=lambda x: x.lower() in ['true', '1'],
+                        help='Whether to multiply a factor to prevent measurements_loss exploding')
 
 
     # optimizer flags
