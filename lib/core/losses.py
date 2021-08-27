@@ -113,6 +113,7 @@ class SMPLifyXMCLoss(nn.Module):
         self.J_regressor = body_model.J_regressor
 
         self.shape_prior = shape_prior
+        self.weight_above_150 = kwargs.pop('weight_above_150')
 
         self.use_hands = use_hands
         if self.use_hands:
@@ -278,8 +279,13 @@ class SMPLifyXMCLoss(nn.Module):
                 f_height = fitted_measurements['height']
                 f_mass = fitted_measurements['mass']
                 # shape loss
-                measurements_loss = torch.exp(100*(abs(f_height-gt_height))) + \
-                            torch.exp(abs(f_mass-gt_weight))
+                measurements_loss = None
+                if self.weight_above_150:
+                    measurements_loss = torch.exp(100 * (abs(f_height - gt_height))) + \
+                                        torch.exp(abs(f_mass - gt_weight) / 5)
+                else:
+                    measurements_loss = torch.exp(100*(abs(f_height-gt_height))) + \
+                                torch.exp(abs(f_mass-gt_weight))
                 shape_loss = (shape_prior_loss + measurements_loss) * self.shape_weight
             else:
                 shape_loss = shape_prior_loss * self.shape_weight
